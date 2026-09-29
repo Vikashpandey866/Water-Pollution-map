@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India Water Pollution Map</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">ENVIRONMENT MONITORING</div>
+        <h1>India Water Pollution Map</h1>
+        <p>Explore state-wise water pollution levels</p>
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Live Map
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="map-card">
+
+        <div class="map-toolbar">
+          <div class="search-wrap">
+            <span>⌕</span>
+            <input id="searchInput" type="text" placeholder="Search state...">
+            <button id="searchBtn">Search</button>
+          </div>
+
+          <button id="locateBtn" class="tool-btn">📍 My Location</button>
+        </div>
+
+        <div id="map"></div>
+
+        <div class="map-note">
+          <span>💧</span>
+          Click a state to view its pollution details.
+        </div>
+
+      </section>
+
+      <aside class="side-panel">
+
+        <div class="panel-heading">
+          <span class="water-icon">💧</span>
+          <div>
+            <h2 id="selectedState">India</h2>
+            <p id="selectedSubtitle">Water pollution overview</p>
+          </div>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <span>Pollution Level</span>
+            <strong id="level">—</strong>
+          </div>
+
+          <div class="metric">
+            <span>Water Quality</span>
+            <strong id="quality">Select a state</strong>
+          </div>
+
+          <div class="metric">
+            <span>Risk Score</span>
+            <strong id="score">—</strong>
+          </div>
+
+          <div class="metric">
+            <span>Primary Source</span>
+            <strong id="source">—</strong>
+          </div>
+        </div>
+
+        <div class="legend-box">
+          <h3>Pollution Level</h3>
+
+          <div class="legend-row">
+            <span class="legend-color good"></span>
+            <div>
+              <b>Low</b>
+              <small>0–25</small>
+            </div>
+          </div>
+
+          <div class="legend-row">
+            <span class="legend-color moderate"></span>
+            <div>
+              <b>Moderate</b>
+              <small>26–50</small>
+            </div>
+          </div>
+
+          <div class="legend-row">
+            <span class="legend-color poor"></span>
+            <div>
+              <b>High</b>
+              <small>51–75</small>
+            </div>
+          </div>
+
+          <div class="legend-row">
+            <span class="legend-color severe"></span>
+            <div>
+              <b>Very High</b>
+              <small>76–100</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="disclaimer">
+          <b>Project demo data</b>
+          <p>
+            The pollution scores shown here are sample values for the project UI.
+            Replace them with verified water-quality data before presenting them
+            as real measurements.
+          </p>
+        </div>
+
+      </aside>
+
+    </main>
+
+    <footer>
+      Map data: OpenStreetMap / Leaflet · State boundaries: India States GeoJSON
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
